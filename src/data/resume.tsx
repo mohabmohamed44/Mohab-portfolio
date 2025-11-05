@@ -11,8 +11,7 @@ export const DATA = {
   name: "Mohab Mohammed",
   initials: "MM",
   url: "https://dillion.io",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  location: "Cairo, Egypt",
   description:
     "I am a Software Engineer focused on building full-stack web apps and exploring Artificial Intelligence. Competitive programming helps me think smarter and write better code. I’m passionate about continuous learning — reading about programming, self-discipline, and personal growth to improve every day.",
   summary:
@@ -48,7 +47,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    //{ href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "mohammedmohab078@gmail.com",
@@ -70,22 +69,15 @@ export const DATA = {
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://x.com/MohabMo55",
         icon: Icons.x,
 
         navbar: true,
       },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
-        navbar: true,
-      },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -122,7 +114,7 @@ export const DATA = {
   projects: [
     {
       title: "Automax Full Stack Car Rental System" ,
-      href: "https://github.com/mohabmohamed44/Automax-Car-Rental-Sytem-using-Django.",
+      href: "https://github.com/mohabmohamed44/Automax-Car-Rental-Sytem-using-Django",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
