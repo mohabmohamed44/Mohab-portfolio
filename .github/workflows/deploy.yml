@@ -3,8 +3,13 @@ name: Deploy to Vercel
 on:
   push:
     branches:
+      - master
       - main
       - feature/*   # deploy preview builds from feature branches
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
   deploy:
@@ -14,10 +19,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
+      - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
           version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -28,8 +39,9 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # stored in GitHub Secrets
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
           github-comment: false
+          vercel-args: '--prod'
