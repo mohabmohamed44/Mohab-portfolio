@@ -56,7 +56,14 @@ export default function Page() {
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Internships</h2>
+            <div className="flex flex-col md:flex-row md:items-center gap-2">
+              <h2 className="text-xl font-bold">Internships</h2>
+              <div className="flex flex-wrap gap-1">
+                <Badge variant="outline">Remote</Badge>
+                <Badge variant="outline">Full-time</Badge>
+                <Badge variant="outline">Software Engineering</Badge>
+              </div>
+            </div>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade

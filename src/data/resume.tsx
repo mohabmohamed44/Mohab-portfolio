@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, Award } from "lucide-react";
 import AvatarImage from '@/assets/Mohab.jpg'
 import CIS from  "@/assets/cis1.png";
 import Dashboard from "@/assets/screen.png"
@@ -10,7 +10,7 @@ import Delma from "@/assets/Group-48.png"
 export const DATA = {
   name: "Mohab Mohammed",
   initials: "MM",
-  url: "https://dillion.io",
+  url: "https://mohab-portfolio-topaz.vercel.app/",
   location: "Cairo, Egypt",
   description:
     "I am a Software Engineer focused on building full-stack web apps and exploring Artificial Intelligence. Competitive programming helps me think smarter and write better code. I’m passionate about continuous learning — reading about programming, self-discipline, and personal growth to improve every day.",
@@ -47,7 +47,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    //{ href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/certificates", icon: Award, label: "Certificates" },
   ],
   contact: {
     email: "mohammedmohab078@gmail.com",
@@ -100,6 +100,16 @@ export const DATA = {
         Optimized API response times, reducing load time by 30%.
         Improved database query efficiency, reducing response time by 40%.`,
     },
+    {
+      company: "EG FWD | Udacity",
+      href: "https://egfwd.com/",
+      badges: [],
+      title: "Web Development, Front-End Engineering",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1c5djZEKJXU2zTMyfunI1igRlI_jKpVeJxw&s",
+      start: "june 2020",
+      end: "August 2020",
+      description: `Participated in a fully funded digital upskilling scholarship in Web Development with Udacity Working on Web Development and make responsive web Apps and websites Working on all media devices.`
+    }
   ],
   education: [
     {
@@ -131,7 +141,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/mohabmohamed44/Automax-Car-Rental-Sytem-using-Django.",
+          href: "https://github.com/mohabmohamed44/Automax-Car-Rental-Sytem-using-Django",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -150,7 +160,6 @@ export const DATA = {
         "Next.js",
         "Typescript",
         "Tailwind CSS",
-        "ShandCN ui",
         "Supabase",
         "Firebase",
         "Shadcn UI",

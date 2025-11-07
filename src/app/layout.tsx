@@ -12,8 +12,17 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
+const createSafeUrl = (url?: string) => {
+  if (!url) return new URL("https://localhost:3000");
+  try {
+    return new URL(url);
+  } catch {
+    return new URL("https://localhost:3000");
+  }
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.url),
+  metadataBase: createSafeUrl(DATA.url),
   title: {
     default: DATA.name,
     template: `%s | ${DATA.name}`,
@@ -46,6 +55,34 @@ export const metadata: Metadata = {
     google: "",
     yandex: "",
   },
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#000000",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

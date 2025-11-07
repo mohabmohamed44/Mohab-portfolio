@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'github.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+        pathname: '/**',
+      }
     ],
   },
 };
