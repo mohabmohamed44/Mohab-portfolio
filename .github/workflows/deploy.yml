@@ -45,3 +45,9 @@ jobs:
           working-directory: ./
           github-comment: false
           vercel-args: '--prod'
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+            vercel-token: ${{ secrets.VERCEL_TOKEN }}
+            working-directory: ./
+            github-comment: false
