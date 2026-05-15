@@ -20,14 +20,14 @@ interface Props {
 
 export default function CertificateCard({ certificate }: Props) {
   return (
-    <Card className="flex flex-col min-h-[100dvh] space-y-10">
+    <Card className="flex flex-col space-y-6">
       {/* Image Section */}
-      <div className="relative aspect-video w-full bg-muted">
+      <div className="relative w-full h-[500px] bg-muted rounded-t-lg overflow-hidden">
         <Image
           src={certificate.image_ as string}
           alt={certificate.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="100vw"
           className="object-contain"
           priority
         />
