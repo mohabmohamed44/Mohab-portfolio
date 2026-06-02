@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-
+import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollingBackground } from "@/components/scrolling-background";
 import { DATA } from "@/data/resume";
@@ -99,11 +99,13 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <TooltipProvider delayDuration={0}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <TooltipProvider delayDuration={0}>
             <ScrollingBackground />
             {children}
             <Navbar />
           </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

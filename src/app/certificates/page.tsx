@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import BlurFade from "@/components/magicui/blur-fade";
 import CertificateList from "@/components/certificate-list";
 
