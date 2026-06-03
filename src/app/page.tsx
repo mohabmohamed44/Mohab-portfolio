@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+"use client";
 
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
@@ -7,9 +7,11 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
-import Markdown from "react-markdown";
+import Markdown from "react-markdown";    
+import { Download } from "lucide-react";  
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -31,6 +33,27 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <div className="flex flex-wrap items-center gap-3 pt-4">
+                  <Button
+                    type="button"
+                    className="h-11 rounded-full border border-black/10 bg-black dark:bg-white px-5 text-white dark:text-black shadow-2xl transition-colors hover:bg-black/90 dark:hover:bg-white/90"
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = DATA.resumeUrl;
+                      link.download = "Mohab_Mohammed_CV.pdf";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    <Download className="mr-2 size-4" />
+                    <span className="text-sm font-medium leading-none tracking-tight lg:text-base">
+                      Download CV
+                    </span>
+                  </Button>
+                </div>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-32 border">

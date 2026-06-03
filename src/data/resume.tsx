@@ -17,6 +17,7 @@ export const DATA = {
   summary:
     "Computer Science graduate and Software Engineer passionate about full-stack web development and Artificial Intelligence. I love solving problems through competitive programming and constantly improving my skills.",
   avatarUrl: AvatarImage,
+  resumeUrl: "/Mohab_mohammed.pdf",
   skills: [
     "React",
     "Next.js",
