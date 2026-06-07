@@ -40,3 +40,8 @@ LICENSE
 
 # CV 
 Mohab_mohammed.pdf
+
+.vscode/
+
+# markdown files
+*.md
