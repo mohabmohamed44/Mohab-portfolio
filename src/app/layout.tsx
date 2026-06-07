@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollingBackground } from "@/components/scrolling-background";
+import { StructuredData } from "@/components/structured-data";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -25,17 +26,55 @@ const createSafeUrl = (url?: string) => {
 export const metadata: Metadata = {
   metadataBase: createSafeUrl(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name} - Software Engineer & Full-Stack Developer`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  keywords: [
+    "Mohab Mohammed",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Web Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "JavaScript Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "Python Developer",
+    "Django Developer",
+    "Competitive Programming",
+    "Software Development",
+    "Cairo Egypt",
+    "Portfolio",
+    "Web Development",
+    "AI Engineer",
+    "Artificial Intelligence",
+  ],
+  authors: [{ name: DATA.name, url: DATA.url }],
+  creator: DATA.name,
+  publisher: DATA.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} - Software Engineer & Full-Stack Developer`,
     description: DATA.description,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: `${DATA.name} Portfolio`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/me.png",
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name} - Software Engineer`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -49,12 +88,18 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
     card: "summary_large_image",
+    title: `${DATA.name} - Software Engineer & Full-Stack Developer`,
+    description: DATA.description,
+    creator: "@MohabMo55",
+    images: ["/me.png"],
   },
   verification: {
-    google: "",
+    google: "-1UewMSv-xSV49yjN0iiQ_0_7DydAAgFmBFs1RIDtSA",
     yandex: "",
+  },
+  alternates: {
+    canonical: DATA.url,
   },
   icons: {
     icon: [
@@ -93,6 +138,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
