@@ -8,7 +8,10 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScrollingBackground } from "@/components/scrolling-background";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { DATA } from "@/data/resume";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Markdown from "react-markdown";    
 import { Download } from "lucide-react";  
@@ -17,7 +20,8 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-[100dvh] space-y-10 selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
+      <ScrollingBackground />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -26,7 +30,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -231,30 +235,45 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+      <section id="contact" className="relative my-12">
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <div className="relative rounded-3xl border border-border overflow-hidden">
+            <FlickeringGrid
+              squareSize={2}
+              gridGap={2}
+              color="#9CA3AE"
+              maxOpacity={0.3}
+              flickerChance={0.3}
+              className={cn(
+                "[mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]",
+                "absolute inset-x-0 top-0 h-full w-full",
+              )}
+            />
+            <div className="fixed -top-3 left-1/2 -translate-x-1/2 z-100">
+              <div className="inline-block rounded-lg bg-foreground text-background px-4 py-1 text-sm">
                 Contact
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
-                >
-                  with a direct question on twitter
-                </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
-              </p>
             </div>
-          </BlurFade>
-        </div>
+            <div className="relative z-10 px-6 py-10 md:px-12 md:py-15 text-center">
+              <div className="space-y-6">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                  Get in Touch
+                </h2>
+                <p className="mx-auto max-w-[600px] text-lg text-muted-foreground md:text-xl">
+                  Want to chat? Just shoot me a dm{" "}
+                  <Link
+                    href={DATA.contact.social.X.url}
+                    className="text-blue-500 hover:underline font-medium"
+                  >
+                    with a direct question on twitter
+                  </Link>{" "}
+                  and I&apos;ll respond whenever I can. I will ignore all
+                  soliciting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </BlurFade>
       </section>
     </main>
   );

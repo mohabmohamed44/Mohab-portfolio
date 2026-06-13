@@ -28,12 +28,21 @@ export function ScrollingBackground() {
       }}
     >
       <FlickeringGrid
-        className="absolute inset-0"
+        className="absolute inset-0 dark:hidden"
         squareSize={3}
-        gridGap={4}
-        color="#8B5CF6"
-        maxOpacity={0.6}
-        flickerChance={0.2}
+        gridGap={3}
+        color="#4B5563"
+        maxOpacity={0.5}
+        flickerChance={0.15}
+        height={100}
+      />
+      <FlickeringGrid
+        className="absolute inset-0 hidden dark:block"
+        squareSize={3}
+        gridGap={3}
+        color="#9CA3AF"
+        maxOpacity={0.4}
+        flickerChance={0.15}
         height={100}
       />
     </div>
