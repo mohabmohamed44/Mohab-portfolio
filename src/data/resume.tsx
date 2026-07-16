@@ -6,7 +6,9 @@ import Dashboard from "@/assets/screen.png"
 import Listing from "@/assets/View Listing.png";
 import Wallpaper from "@/assets/FreshCart.webp";
 import Delma from "@/assets/Group-48.png"
-
+import VANTA from "@/assets/VANTA.png"
+import INFORGE from "@/assets/INFORGE.png";
+import Prioritize from "@/assets/Prioritize.png";
 export const DATA = {
   name: "Mohab Mohammed",
   initials: "MM",
@@ -212,36 +214,120 @@ export const DATA = {
       image: Wallpaper,
       video: "",
     },
+    // {
+    //   title: "Clinical Management System | Delma",
+    //   href: "https://clinical-management-system.vercel.app/",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "A modern full-stack clinical management platform for patients, doctors, and laboratories. The system allows patients to Book appointments with doctors or hospitals Schedule laboratory tests and receive results Use AI Chatbot (powered by Gemini API) for symptom diagnosis and doctor recommendations",
+    //   technologies: [
+    //     "React.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Headless UI",
+    //     "Firebase",
+    //     "Supabase",
+    //     "Sentry",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://clinical-management-system.vercel.app",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: Delma,
+    //   //video:"https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+    // },
     {
-      title: "Clinical Management System | Delma",
-      href: "https://clinical-management-system.vercel.app/",
-      dates: "April 2023 - March 2024",
-      active: true,
+      title: "Vanta | Cars Landing Page",
+      href: "https://vanta-cars-landing-page.vercel.app/",
+      dates: "10 July 2026 - 13 July 2026",
+      location: "Cairo, Egypt",
       description:
-        "A modern full-stack clinical management platform for patients, doctors, and laboratories. The system allows patients to Book appointments with doctors or hospitals Schedule laboratory tests and receive results Use AI Chatbot (powered by Gemini API) for symptom diagnosis and doctor recommendations",
+        "Landing page for Vanta Cars, a fictional car dealership company. The website features a modern design with responsive layout, smooth animations, and interactive elements to showcase their vehicles and services.",
       technologies: [
-        "React.js",
-        "Typescript",
-        "PostgreSQL",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Headless UI",
-        "Firebase",
-        "Supabase",
-        "Sentry",
-        "Stripe",
-        "Cloudflare Workers",
+        "HTML 5",
+        "CSS 3",
+        "Vanilla JavaScript",
+        "Responsive design",
       ],
       links: [
         {
           type: "Website",
-          href: "https://clinical-management-system.vercel.app",
+          href: "https://vanta-cars-landing-page.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Delma,
-      //video:"https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      image: VANTA,
+      video: "",
     },
+    {
+      title: "INFORGE | GYM Landing Page",
+      href: "https://elite-gym-landing-page-alpha.vercel.app/",
+      dates: "14 July 2026 - 16 July 2026",
+      description: "The site is built as a conversion-focused landing page for a high-end physical fitness brand. Its design language aligns with a premium, industrial 'strength-first' philosophy, prioritizing clarity and direct access to product (training) information.",
+
+      technologies: [
+        "HTML 5",
+        "CSS 3",
+        "Vanilla JavaScript",
+        "Responsive design",
+        "Three Js",
+        "GSAP",
+        "Scroll Trigger",
+        "lenis"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://elite-gym-landing-page-alpha.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: INFORGE,
+      video: "",
+    },
+    {
+      title: "Prioritize | Task Management System",
+      href: "https://task-management-rho-smoky.vercel.app/",
+      dates: "8 Feb 2026 - Now",
+      active: true,
+      description: "Prioritize is a minimalist, developer-grade task and goal management SaaS designed for professionals who need to eliminate noise and execute on high-leverage objectives. Built with a strict focus on performance, the application replaces overwhelming, cluttered interfaces with a highly disciplined, monochrome workspace where goals directly dictate daily tasks.",
+      technologies: [
+        "React",
+        "Typescript",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Drag & Drop",
+        "Framer Motion",
+        "CMD-K",
+        "Redux",
+        "Tan Stack Query",
+        "DOM Purify",
+        "Progressive Web Application",
+      ]
+      ,
+      links: [
+        {
+          type: "Website",
+          href: "https://task-management-rho-smoky.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/mohabmohamed44/Task-Management",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: Prioritize,
+      video: ""
+    }
   ],
   hackathons: [
     {
